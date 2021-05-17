@@ -19,7 +19,9 @@ file_suffix <- function(year) {
                     '2009-2010' = 'F',
                     '2011-2012' = 'G',
                     '2013-2014' = 'H',
-                    '2015-2016' = 'I'
+                    '2015-2016' = 'I',
+                    '2017-2018' = 'J',
+                    '2019-2020' = 'K'
     )
 
     return(suffix)
@@ -76,6 +78,11 @@ validate_year <- function(year, throw_error = TRUE) {
                     '2009-2010' = TRUE,
                     '2011-2012' = TRUE,
                     '2013-2014' = TRUE,
+                    '2015-2016' = TRUE,
+                    '2017-2018' = TRUE,
+                    '2019-2020' = TRUE,
+                    '2021-2022' = TRUE,
+                    '2023-2024' = TRUE,
                     FALSE)
 
     if(throw_error == TRUE && valid == FALSE) {
@@ -119,7 +126,7 @@ process_file_name <- function(file_name, year, extension = ".XPT") {
     }
 
     # Check for a suffix
-    valid_suffixes <- c("B", "C", "D", "E", "F", "G", "H")
+    valid_suffixes <- c("B", "C", "D", "E", "F", "G", "H", "I", "J", "K")
     valid_suffix <- file_suffix(year)
 
     # If it already has the right suffix, just tack on the extension
